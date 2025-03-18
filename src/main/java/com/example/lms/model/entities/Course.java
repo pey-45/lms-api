@@ -7,23 +7,23 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
 public class Course {
 
     private Long id;
     private String name;
     private String description;
-    private int hours;
-    private boolean active;
+    private Integer hours;
+    private Boolean archived;
 
     public Course() {}
-    public Course(String name, String description, int hours, boolean active) {
+    public Course(String name, String description, Integer hours, Boolean archived) {
         this.name = name;
         this.description = description;
         this.hours = hours;
-        this.active = active;
+        this.archived = archived;
     }
 
     @Id

@@ -11,13 +11,13 @@ public class Grade {
 
     private Long id;
     private String testName;
-    private float grade;
+    private Float grade;
     private User student;
     private Edition edition;
     private Resource resource;
 
     public Grade() {}
-    public Grade(String testName, float grade, User user, Edition edition, Resource resource) {
+    public Grade(String testName, Float grade, User user, Edition edition, Resource resource) {
         this.testName = testName;
         this.grade = grade;
         this.student = user;
@@ -31,13 +31,13 @@ public class Grade {
         return id;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "studentId")
     public User getStudent() {
         return student;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "editionId")
     public Edition getEdition() {
         return edition;

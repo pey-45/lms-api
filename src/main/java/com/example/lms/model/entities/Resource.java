@@ -15,9 +15,9 @@ public class Resource {
     private String name;
     private String extension;
     private String description;
-    private int estimatedMinutes;
+    private Integer estimatedMinutes;
     private LocalDateTime limitDate;
-    private byte percentage;
+    private Byte percentage;
     private Section section;
 
     @Id
@@ -30,10 +30,5 @@ public class Resource {
     @JoinColumn(name = "sectionId")
     public Section getSection() {
         return section;
-    }
-
-    @Transient
-    public boolean isEvaluable() {
-        return percentage > 0;
     }
 }
